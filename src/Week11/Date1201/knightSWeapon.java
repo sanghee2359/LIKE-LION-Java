@@ -6,31 +6,31 @@ package Week11.Date1201;
 // 제한수치가 3이고 제한수치를 초과한 기사가 사용할 무기의 공격력이 2라면, 4
 // 15번으로 지정된 기사단원은 무기점에서 공격력이 2인 무기를 구매합니다.
 
-import java.util.Arrays;
-
-import static java.lang.Math.sqrt;
 
 public class knightSWeapon {
     public static int solution(int number, int limit, int power) {
+        int answer = 0;
+        int [] array = new int[number+1]; // 약수의 개수를 담을 배열 생성
 
-        return 0;
-    }
-
-    public static void main(String[] args) {
-        int N = 6;
-        int [] array = new int[N+1];
-        int limit = 3;
-        int power = 2;
         array[1] = 1;
-        for (int j = 2; j <= N ; j++) {
+        for (int j = 2; j <= number ; j++) {
             int count = 0;
             for (int i = 1; i <= Math.sqrt(j); i++) {	// 또는 i * i <= N
                 if(i * i == j) count++;
                 else if( j % i == 0) count += 2;
             }
-            if(count > limit) count = power;
+            if(count > limit) count = power; // limit 조건
             array[j] = count;
-            System.out.printf("%d번째의 약수의 개수:%d\n",j,array[j]);
+//            System.out.printf("%d번째의 약수의 개수:%d\n",j,array[j]);
         }
+        for(int x : array) answer += x; // array의 약수의 개수를 모두 더한다.
+        return answer;
+    }
+
+    public static void main(String[] args) {
+        int N = 10;
+        int limit = 3;
+        int power = 2;
+        System.out.println(solution(N, limit, power));
     }
 }
