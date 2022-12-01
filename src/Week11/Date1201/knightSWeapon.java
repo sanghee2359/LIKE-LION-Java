@@ -19,6 +19,8 @@ public class knightSWeapon {
     public static void main(String[] args) {
         int N = 6;
         int [] array = new int[N+1];
+        int limit = 3;
+        int power = 2;
         array[1] = 1;
         for (int j = 2; j <= N ; j++) {
             int count = 0;
@@ -26,6 +28,7 @@ public class knightSWeapon {
                 if(i * i == j) count++;
                 else if( j % i == 0) count += 2;
             }
+            if(count > limit) count = power;
             array[j] = count;
             System.out.printf("%d번째의 약수의 개수:%d\n",j,array[j]);
         }
