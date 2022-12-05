@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 public class HeapTrea2 {
     public static int[] makeHeap(int[] arr, int parentIdx) {
+        if(parentIdx<0) return arr;
         int leftIdx = 2 * parentIdx + 1;
         int rightIdx = 2 * parentIdx + 2;
         int greaterIdx = parentIdx; // 가장 큰 값을 가진 idx
@@ -24,16 +25,18 @@ public class HeapTrea2 {
         int tmp = arr[parentIdx];
         arr[parentIdx] = arr[greaterIdx];
         arr[greaterIdx] = tmp;
-        return arr;
+        if(parentIdx>=0) parentIdx--;
+        return makeHeap(arr, parentIdx);
     }
 
     public static void main(String[] args) {
-        int[] array = {6, 5, 7, 8};
-        int[] heapArr = makeHeap(array, 1);
+//        int[] array = {6, 5, 7, 8};
+        int[] array = {4,8,5,7,3,2,9,6,7};
+        int[] heapArr = makeHeap(array, 4);
         System.out.println(Arrays.toString(heapArr));
 
-        heapArr = makeHeap(array, 0);
-        System.out.println(Arrays.toString(heapArr));
+//        heapArr = makeHeap(array, 0);
+//        System.out.println(Arrays.toString(heapArr));
 
 
         /*int i = (array.length-1) /2;
