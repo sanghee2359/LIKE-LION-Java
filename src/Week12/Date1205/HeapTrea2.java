@@ -21,10 +21,15 @@ public class HeapTrea2 {
             greaterIdx = rightIdx;
         }
 
-        // swap
-        int tmp = arr[parentIdx];
-        arr[parentIdx] = arr[greaterIdx];
-        arr[greaterIdx] = tmp;
+        // swap -> 교환이 안일어난다 = 이미 heap 만족
+        // 교환이 일어났다면 아래의 자식노드와 heap을 만족하는지 한 번 더 체크해야한다.
+
+        if(parentIdx != greaterIdx){
+            int tmp = arr[parentIdx];
+            arr[parentIdx] = arr[greaterIdx];
+            arr[greaterIdx] = tmp;
+            makeHeap(arr,greaterIdx);
+        }
         if(parentIdx>=0) parentIdx--;
         return makeHeap(arr, parentIdx);
     }
