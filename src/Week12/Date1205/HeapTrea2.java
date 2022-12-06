@@ -37,7 +37,7 @@ public class HeapTrea2 {
     public static void main(String[] args) {
 //        int[] array = {6, 5, 7, 8};
         int[] array = {4,8,5,7,3,2,9,6,7};
-        int start = array.length-2;
+        int start = (array.length-2) /2;
         int[] heapArr = makeHeap(array, start);
         System.out.println(Arrays.toString(heapArr));
 
