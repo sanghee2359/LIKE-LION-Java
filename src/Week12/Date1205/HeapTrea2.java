@@ -37,28 +37,10 @@ public class HeapTrea2 {
     public static void main(String[] args) {
 //        int[] array = {6, 5, 7, 8};
         int[] array = {4,8,5,7,3,2,9,6,7};
-        int[] heapArr = makeHeap(array, 4);
+        int start = array.length-2;
+        int[] heapArr = makeHeap(array, start);
         System.out.println(Arrays.toString(heapArr));
 
-//        heapArr = makeHeap(array, 0);
-//        System.out.println(Arrays.toString(heapArr));
-
-
-        /*int i = (array.length-1) /2;
-        int n = i;
-        if(i>= 1) {
-            // root(n), left(2n), right(2n+1) 비교
-            int max = Math.max(Math.max(array[n],array[2*n]),array[2*n+1]);
-            if (max == array[n]){
-                i = i - 1;
-                n = i;
-                System.out.println();
-            } else if(max == array[2*n]) {
-                n = 2*n;
-            } else if(max == array[2*n+1]) {
-                n = 2*n+1;
-            }
-        }*/
 
     }
 }
