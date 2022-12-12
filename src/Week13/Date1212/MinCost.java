@@ -9,6 +9,12 @@ public class MinCost {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 if(i==0&&j==0) dp[i][j] = matrix[i][j]; // 한칸 집어넣기
+                else if(i==0 && j>0) {
+                    dp[i][j] = dp[i][j-1] + matrix[i][j];
+                }
+                else if(i>0 && j==0){
+                    dp[i][j] = dp[i-1][j] + matrix[i][j];
+                }
             }
         }
         for (int i = 0; i < dp.length; i++) {
