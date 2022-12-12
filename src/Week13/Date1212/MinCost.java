@@ -15,6 +15,9 @@ public class MinCost {
                 else if(i>0 && j==0){
                     dp[i][j] = dp[i-1][j] + matrix[i][j];
                 }
+                else {
+                    dp[i][j] = Math.min(Math.min(dp[i-1][j-1], dp[i][j-1]), dp[i-1][j]) + matrix[i][j];
+                }
             }
         }
         for (int i = 0; i < dp.length; i++) {
