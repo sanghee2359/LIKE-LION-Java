@@ -8,6 +8,7 @@ public class SumUntil {
         int[] list = {2,7,40,19};
         int[][] dp = new int[list.length][list.length];
 
+        // from에서 to까지 더하기
         for (int i = 0; i < list.length; i++) {
             for (int j = i; j < list.length; j++) {
                 if(j == 0) dp[i][j] = list[j];
