@@ -11,7 +11,7 @@ public class SumUntil {
 //        for (int i = 0; i < list.length; i++) {
             for (int j = 0; j < list.length; j++) {
                 if(j == 0) dp[i][j] = list[j];
-                dp[i][j] += dp[i][j-1]+list[j];
+                else dp[i][j] = dp[i][j-1]+list[j];
             }
             System.out.println(Arrays.toString(dp[i]));
 //        }
