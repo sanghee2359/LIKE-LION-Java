@@ -13,7 +13,6 @@ public class SumUntil {
                 if(j == 0) dp[i][j] = list[j];
                 else dp[i][j] = dp[i][j-1]+list[j];
             }
-            Arrays.stream(list).min();
             System.out.println(Arrays.toString(dp[i]));
         }
     }
